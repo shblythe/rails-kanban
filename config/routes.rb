@@ -1,5 +1,9 @@
 Kanban::Application.routes.draw do
-  resources :tasks
+  resources :tasks do
+    member do
+      put :change
+    end
+  end
 
   get "pages/home"
   root 'pages#home'
