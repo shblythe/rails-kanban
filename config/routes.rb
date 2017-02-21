@@ -1,4 +1,6 @@
 Kanban::Application.routes.draw do
+  resources :tasks
+
   get "pages/home"
   root 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
