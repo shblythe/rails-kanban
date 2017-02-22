@@ -1,36 +1,16 @@
 <div class="container">
   <div class="row">
     <h1>Tasks</h1>
+    <%= link_to "<i class='fa fa-plus' aria-hidden='true'></i>".html_safe,
+            new_task_path, class: "btn-floating btn-large blue" %>
 
+  </div>
+  <div class="row">
     <% [["Open",@open],["WIP",@wip],["Closed",@closed]].each do |title,list| %>
-      <div class="col l4 12 grey">
-      <h2><%= title %></h2>
-
-        <% list.each do |task| %>
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <%= task.content %>
-              <br>
-              <%= link_to 'Show', task %>
-              <%= link_to 'Edit', edit_task_path(task) %>
-              <%= link_to 'Destroy', task, method: :delete,
-                  data: { confirm: 'Are you sure?' } %>
-              <br>
-              <% [["Open","open"],["WIP","wip"],["Closed","closed"]].each do
-                     |verb,state| %>
-                <%= link_to verb, change_task_path(task, state: state),
-                    method: :put %>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
+      <div class="col l4 s12 grey">
+        <h3><%= title %></h3>
+        <%= render list %>
       </div>
     <% end %>
-
-  <br>
-  </div>
-
-  <div class="row">
-    <%= link_to 'New Task', new_task_path %>
   </div>
 </div>

@@ -1,0 +1,17 @@
+<div class="card blue-grey darken-1">
+  <div class="card-content white-text">
+    <%= task.content %>
+  </div>
+  <div class="card-action">
+    <% [["Open","open"],["WIP","wip"],["Closed","closed"]].each do
+           |verb,state| %>
+      <%= link_to verb, change_task_path(task, state: state),
+          method: :put %>
+    <% end %>
+    <%= link_to "<i class='fa fa-edit' aria-hidden='true'></i>".html_safe,
+            edit_task_path(task) %>
+    <%= link_to "<i class='fa fa-trash-o' aria-hidden='true'></i>".html_safe,
+            task_path(task), method: :delete,
+            data: { confirm: 'Are you sure?' }, class: "right" %>
+  </div>
+</div>
