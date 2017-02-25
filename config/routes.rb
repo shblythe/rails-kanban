@@ -2,6 +2,7 @@ Kanban::Application.routes.draw do
   resources :tasks do
     member do
       put :change
+      post :change
     end
   end
 
