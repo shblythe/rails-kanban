@@ -1,3 +1,5 @@
+<% content_for :head do -%>
+<% end -%>
 <div class="container">
   <div class="row">
     <!--<h1>Tasks</h1>-->
@@ -7,7 +9,9 @@
   </div>
   <div class="row">
     <% [["Open",@open],["WIP",@wip],["Closed",@closed]].each do |title,list| %>
-      <div class="col l4 s12 grey" style="min-height: 80vh; border:1px solid white">
+      <div class="col l4 s12 grey" id="Col_<%= title %>"
+          style="min-height: 80vh; border:1px solid white"
+          ondrop="drop(event)" ondragover="allowDrop(event)">
         <h5><%= title %></h5>
         <%= render list %>
       </div>
