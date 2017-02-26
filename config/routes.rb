@@ -7,7 +7,7 @@ Kanban::Application.routes.draw do
   end
 
   get "pages/home"
-  root 'pages#home'
+  root 'tasks#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

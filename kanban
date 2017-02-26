@@ -15,6 +15,7 @@ indent_mode=2
 [project]
 name=Kanban
 base_path=/home/stephen/Documents/Development/ruby/rails/kanban/
+description=
 
 [long line marker]
 long_line_behaviour=1
@@ -22,11 +23,11 @@ long_line_column=72
 
 [files]
 current_page=0
-FILE_NAME_0=345;HTML;0;EUTF-8;0;1;0;%2Fhome%2Fstephen%2FDocuments%2FDevelopment%2Fruby%2Frails%2Fkanban%2Fapp%2Fviews%2Ftasks%2Findex.html.erb;0;2
-FILE_NAME_1=306;CSS;0;EUTF-8;0;1;0;%2Fhome%2Fstephen%2FDocuments%2FDevelopment%2Fruby%2Frails%2Fkanban%2Fapp%2Fassets%2Fstylesheets%2Fapplication.scss;0;2
-FILE_NAME_2=437;HTML;0;EUTF-8;0;1;0;%2Fhome%2Fstephen%2FDocuments%2FDevelopment%2Fruby%2Frails%2Fkanban%2Fapp%2Fviews%2Ftasks%2F_form.html.erb;0;2
-FILE_NAME_3=367;HTML;0;EUTF-8;0;1;0;%2Fhome%2Fstephen%2FDocuments%2FDevelopment%2Fruby%2Frails%2Fkanban%2Fapp%2Fviews%2Ftasks%2F_task.html.erb;0;2
-FILE_NAME_4=664;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fstephen%2FDocuments%2FDevelopment%2Fruby%2Frails%2Fkanban%2Fapp%2Fassets%2Fjavascripts%2Fapplication.js;0;4
+FILE_NAME_0=572;HTML;0;EUTF-8;0;1;0;%2Fhome%2Fstephen%2FDocuments%2FDevelopment%2Fruby%2Frails%2Fkanban%2Fapp%2Fviews%2Ftasks%2Findex.html.erb;0;2
+FILE_NAME_1=157;HTML;0;EUTF-8;0;1;0;%2Fhome%2Fstephen%2FDocuments%2FDevelopment%2Fruby%2Frails%2Fkanban%2Fapp%2Fviews%2Ftasks%2F_task.html.erb;0;2
+FILE_NAME_2=664;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fstephen%2FDocuments%2FDevelopment%2Fruby%2Frails%2Fkanban%2Fapp%2Fassets%2Fjavascripts%2Fapplication.js;0;4
+FILE_NAME_3=1;Ruby;0;EUTF-8;0;1;0;%2Fhome%2Fstephen%2FDocuments%2FDevelopment%2Fruby%2Frails%2Fkanban%2Fconfig%2Froutes.rb;0;2
+FILE_NAME_4=282;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fstephen%2FDocuments%2FDevelopment%2Fruby%2Frails%2Fkanban%2Fapp%2Fassets%2Fjavascripts%2Fdrag.js;0;2
 
 [VTE]
 last_dir=/home/stephen/Dropbox/Mine/Documents/Development/python/python2-simpletcp/simpletcp/examples/echoreverse
