@@ -2,7 +2,8 @@
     ondragstart="drag(event)" id="<%= dom_id(task) %>"
     ondrop="" ondragover="" style="padding:5px">
   <div class="card-content white-text">
-    <%= task.content %>
+    <%= best_in_place task, :content, :as => :textarea %>
+    <br/>
   </div>
   <div class="card-action">
     <%= link_to "<i class='fa fa-edit white-text' aria-hidden='true'></i>".html_safe,

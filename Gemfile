@@ -47,3 +47,4 @@ end
 gem 'sass', '>=3.3'
 gem 'materialize-sass'
 gem 'font-awesome-rails'
+gem 'best_in_place'
