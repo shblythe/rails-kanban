@@ -1,4 +1,13 @@
-<div class="card-panel blue-grey darken-1" draggable="true"
+<div class="card-panel
+      <%=
+        if task.urgent=='true' and task.important=='true'
+          then 'red'
+        elsif task.urgent=='true' and task.important=='false'
+          then 'orange'
+        elsif task.urgent=='false' and task.important=='true'
+          then 'green'
+        else 'blue-grey' end%>
+      darken-1" draggable="true"
     ondragstart="drag(event)" id="<%= dom_id(task) %>"
     ondrop="" ondragover="" style="padding:5px">
   <div class="card-content white-text">

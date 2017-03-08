@@ -1,8 +1,5 @@
-<% content_for :head do -%>
-<% end -%>
 <div class="container">
   <div class="row">
-    <!--<h1>Tasks</h1>-->
     <%= link_to "<i class='fa fa-plus' aria-hidden='true'></i>".html_safe,
             new_task_path, class: "btn-floating btn-large blue" %>
 
@@ -11,7 +8,7 @@
     <% [["Open",@open],["WIP",@wip],["Closed",@closed]].each do |title,list| %>
       <div class="col l4 s12 grey" id="Col_<%= title %>"
           style="min-height: 80vh; border:1px solid white"
-          ondrop="drop(event)" ondragover="allowDrop(event)">
+          ondrop="drop_status(event)" ondragover="allowDrop(event)">
         <h5><%= title %></h5>
         <%= render list %>
       </div>

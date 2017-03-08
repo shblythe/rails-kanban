@@ -9,6 +9,15 @@ class TasksController < ApplicationController
     @wip = @tasks.where(state:"wip")
     @closed = @tasks.where(state:"closed")
   end
+  
+  def eisenhower
+    @tasks = Task.all
+    @eisen_q1 = @tasks.where("state='open' AND urgent='true' AND important='true'")
+    @eisen_q2 = @tasks.where("state='open' AND urgent='false' AND important='true'")
+    @eisen_q3 = @tasks.where("state='open' AND urgent='true' AND important='false'")
+    @eisen_q4 = @tasks.where("state='open' AND urgent='false' AND important='false'")
+    @eisen_pending = @tasks.where("state='open' AND urgent is null and important is null")
+  end
 
   # GET /tasks/1
   # GET /tasks/1.json
@@ -65,12 +74,20 @@ class TasksController < ApplicationController
   end
 
   def change
-    @task.update_attributes(state: params[:state])
+    [:state,:urgent,:important].each do |p|
+      if params[p] then
+        #Equivalent to the original
+        #@task.update_attributes(state: params[:state].downcase())
+        #Because (state: x) is the same as ("state"=>x)
+        #And "state".to_sym() results in :state
+        @task.update_attributes(p=>params[p.to_sym()].downcase())
+      end
+    end
     respond_to do |format|
       format.html { redirect_to tasks_path, notice: "Task updated"}
     end
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task

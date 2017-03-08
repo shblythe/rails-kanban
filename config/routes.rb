@@ -4,6 +4,9 @@ Kanban::Application.routes.draw do
       put :change
       post :change
     end
+    collection do
+      get 'eisenhower'
+    end
   end
 
   get "pages/home"
