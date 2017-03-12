@@ -10,13 +10,18 @@
       darken-1" draggable="true"
     ondragstart="drag(event)" id="<%= dom_id(task) %>"
     ondrop="" ondragover="" style="padding:5px">
+  <% if task.state=="open" %>
+  <input type="checkbox" id="checkbox<%= dom_id(task) %>" class="filled-in"/>
+  <label for="checkbox<%= dom_id(task) %>">
+  <% end %>
   <div class="card-content white-text">
     <%= best_in_place task, :content, :as => :textarea %>
     <br/>
   </div>
-  <div class="card-action">
-    <%= link_to "<i class='fa fa-edit white-text' aria-hidden='true'></i>".html_safe,
-            edit_task_path(task) %>
+  <% if task.state=="open" %>
+  </label>
+  <% end %>
+  <div class="card-action" style="min-height: 16px">
     <%= link_to "<i class='fa fa-trash-o white-text' aria-hidden='true'></i>".html_safe,
             task_path(task), method: :delete,
             data: { confirm: 'Are you sure?' }, class: "right" %>
