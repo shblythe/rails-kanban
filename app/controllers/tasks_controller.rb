@@ -14,9 +14,9 @@ class TasksController < ApplicationController
   
   def index
     @tasks = Task.all
-    @open = @tasks.where(state:"open")
-    @wip = @tasks.where(state:"wip")
-    @closed = @tasks.where(state:"closed")
+    @open = @tasks.where(state:"open").sort_by &:eisenhower_sort_index
+    @wip = @tasks.where(state:"wip").sort_by &:eisenhower_sort_index
+    @closed = @tasks.where(state:"closed").sort_by &:eisenhower_sort_index
   end
   
   def eisenhower
