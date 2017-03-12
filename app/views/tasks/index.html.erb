@@ -1,10 +1,5 @@
 <div class="container">
   <div class="row">
-    <%= link_to "<i class='fa fa-plus' aria-hidden='true'></i>".html_safe,
-            new_task_path, class: "btn-floating btn-large blue" %>
-
-  </div>
-  <div class="row">
     <% [["Open",@open],["WIP",@wip],["Closed",@closed]].each do |title,list| %>
       <div class="col l4 s4 grey" id="Col_<%= title %>"
           style="min-height: 80vh; border:1px solid white"
