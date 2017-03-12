@@ -3,6 +3,15 @@ class TasksController < ApplicationController
 
   # GET /tasks
   # GET /tasks.json
+
+  def tasks_eisen_pending_count
+    tasks = Task.all
+    eisen_pending = tasks.where("state='open' AND urgent is null and important is null")
+    print "************* Eisen pending: ",eisen_pending.count
+    return eisen_pending.count
+  end
+  helper_method :tasks_eisen_pending_count
+  
   def index
     @tasks = Task.all
     @open = @tasks.where(state:"open")
