@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row">
-    <div class="col l10 s12">
+    <div class="col l10 s10">
       <div class="row">
-        <div class="col l6 s12 red" id="Quad_EisenQ1_true_true"
+        <div class="col l6 s6 red" id="Quad_EisenQ1_true_true"
               style="border:1px solid white"
               ondrop="drop_eisenhower(event)" ondragover="allowDrop(event)">
             <h5 id="Quad_EisenQ1_true_true">Important and Urgent</h5>
             <%= render @eisen_q1 %>
         </div>
-        <div class="col l6 s12 green" id="Quad_EisenQ2_false_true"
+        <div class="col l6 s6 green" id="Quad_EisenQ2_false_true"
               style="border:1px solid white"
               ondrop="drop_eisenhower(event)" ondragover="allowDrop(event)">
             <h5 id="Quad_EisenQ2_false_true">Important not Urgent</h5>
@@ -16,13 +16,13 @@
         </div>
       </div>
       <div class="row">
-        <div class="col l6 s12 yellow" id="Quad_EisenQ3_true_false"
+        <div class="col l6 s6 yellow" id="Quad_EisenQ3_true_false"
               style="border:1px solid white"
               ondrop="drop_eisenhower(event)" ondragover="allowDrop(event)">
             <h5 id="Quad_EisenQ3_true_false">Urgent not Important</h5>
             <%= render @eisen_q3 %>
         </div>
-        <div class="col l6 s12 grey" id="Quad_EisenQ4_false_false"
+        <div class="col l6 s6 grey" id="Quad_EisenQ4_false_false"
               style="border:1px solid white"
               ondrop="drop_eisenhower(event)" ondragover="allowDrop(event)">
             <h5 id="Quad_EisenQ4_false_false">Not Important or Urgent</h5>
@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-    <div class="col l2 s12 blue" id="Quad_EisenPending_null_null"
+    <div class="col l2 s2 blue" id="Quad_EisenPending_null_null"
               style="border:1px solid white"
               ondrop="drop_eisenhower(event)" ondragover="allowDrop(event)">
       <h5>Pending</h5>
