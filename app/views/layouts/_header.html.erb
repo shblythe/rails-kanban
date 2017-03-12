@@ -1,7 +1,6 @@
 <nav>
   <div class="nav-wrapper">
-    <%= link_to 'Kanban', root_path, class:"brand-logo" %>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <ul id="nav-mobile" class="left">
       <li><a href="/tasks">Kanban Board</a></li>
       <li><a href="/tasks/eisenhower">
 		<%= if tasks_eisen_pending_count()>0 then "*" else "" end %>
