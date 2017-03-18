@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <% [["Deferred",@deferred]].each do |title,list| %>
+      <div class="col l4 s4 grey" id="Col_<%= title %>"
+          style="min-height: 80vh; border:1px solid white"
+          ondrop="drop_status(event)" ondragover="allowDrop(event)">
+        <h5><%= title %></h5>
+        <%= render list %>
+      </div>
+    <% end %>
+  </div>
+</div>

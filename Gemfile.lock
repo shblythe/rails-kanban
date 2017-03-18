@@ -49,6 +49,8 @@ GEM
     jquery-rails (3.1.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (6.0.1)
+      railties (>= 3.2.16)
     json (1.8.6)
     libv8 (3.16.14.17)
     mail (2.5.4)
@@ -124,6 +126,7 @@ DEPENDENCIES
   font-awesome-rails
   jbuilder (~> 1.2)
   jquery-rails
+  jquery-ui-rails
   materialize-sass
   rails (= 4.0.2)
   sass (>= 3.3)

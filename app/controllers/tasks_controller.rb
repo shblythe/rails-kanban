@@ -1,8 +1,15 @@
+require 'date'
+
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy, :change]
 
   # GET /tasks
   # GET /tasks.json
+
+  def all_undeferred_tasks
+    return Task.all.where("deferred_until is null or deferred_until<=(?)",
+								Date.today)
+  end
 
   def tasks_eisen_pending_count
     tasks = Task.all
@@ -13,7 +20,7 @@ class TasksController < ApplicationController
   helper_method :tasks_eisen_pending_count
   
   def index
-    @tasks = Task.all
+    @tasks = all_undeferred_tasks()
     @open = @tasks.where(state:"open").sort_by &:eisenhower_sort_index
     @wip = @tasks.where(state:"wip").sort_by &:eisenhower_sort_index
     @closed = @tasks.where(state:"closed").sort_by &:eisenhower_sort_index
@@ -26,6 +33,11 @@ class TasksController < ApplicationController
     @eisen_q3 = @tasks.where("state='open' AND urgent='true' AND important='false'")
     @eisen_q4 = @tasks.where("state='open' AND urgent='false' AND important='false'")
     @eisen_pending = @tasks.where("state='open' AND urgent is null and important is null")
+  end
+
+  def deferred
+    @tasks = Task.all
+    @deferred = @tasks.where("state!='closed' AND deferred_until > '#{Date.today}'")
   end
 
   # GET /tasks/1
@@ -105,6 +117,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:content,:state)
+      params.require(:task).permit(:content,:state,:deferred_until)
     end
 end

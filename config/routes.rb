@@ -6,6 +6,7 @@ Kanban::Application.routes.draw do
     end
     collection do
       get 'eisenhower'
+      get 'deferred'
     end
   end
 

@@ -17,11 +17,15 @@
   <div class="card-content white-text">
     <%= best_in_place task, :content, :as => :textarea %>
     <br/>
-  </div>
+ </div>
   <% if task.state=="open" %>
   </label>
   <% end %>
   <div class="card-action" style="min-height: 16px">
+    <%= best_in_place task, :deferred_until, :as => :date, :id => "deferdate",
+	:place_holder => "<i class='fa fa-forward'></i>",
+	:class=>"white-text"
+    %>
     <%= link_to "<i class='fa fa-trash-o white-text' aria-hidden='true'></i>".html_safe,
             task_path(task), method: :delete,
             data: { confirm: 'Are you sure?' }, class: "right" %>
